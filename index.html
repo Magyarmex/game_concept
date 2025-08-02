@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Frog Animation</title>
+  <style>
+    #frog {
+      font-family: monospace;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <pre id="frog"></pre>
+  <script type="module">
+    import frames from './frog_frames.js';
+
+    const frog = document.getElementById('frog');
+    let i = 0;
+
+    function update() {
+      frog.textContent = frames[i % frames.length];
+      i++;
+    }
+
+    setInterval(update, 200);
+  </script>
+</body>
+</html>
